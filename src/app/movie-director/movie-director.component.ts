@@ -9,6 +9,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./movie-director.component.scss'],
 })
 export class MovieDirectorComponent implements OnInit {
+  /**
+   * @param data
+   */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {

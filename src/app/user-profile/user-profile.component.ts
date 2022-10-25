@@ -19,6 +19,12 @@ export class UserProfileComponent implements OnInit {
   movies: any = [];
   favorites: any = [];
 
+  /**
+   * @param fetchApiData
+   * @param dialog
+   * @param router
+   * @param snackBar
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
@@ -26,6 +32,10 @@ export class UserProfileComponent implements OnInit {
     public snackBar: MatSnackBar
   ) {}
 
+  /**
+   * Initialize the component loading the data
+   * @function ngOnInit
+   */
   ngOnInit(): void {
     this.getUser();
   }
@@ -38,12 +48,18 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens edit profile dialog.User now can edit his profile
+   */
   openEditProfileDialog(): void {
     this.dialog.open(UserProfileEditComponent, {
       width: '300px',
     });
   }
 
+  /**
+   *  user can delete his profile
+   */
   deleteProfile(): void {
     if (confirm('Do you really want to delete this account?')) {
       this.router.navigate(['welcome']).then(() => {

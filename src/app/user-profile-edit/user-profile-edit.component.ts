@@ -12,6 +12,12 @@ import { Router } from '@angular/router';
 export class UserProfileEditComponent implements OnInit {
   @Input() userData: any = {};
 
+  /**
+   * @param fetchApiData
+   * @param dialogRef
+   * @param snackBar
+   * @param router
+   */
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserProfileEditComponent>,
@@ -21,6 +27,9 @@ export class UserProfileEditComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * User can update his profile details
+   */
   editUser(): void {
     console.log(this.userData);
     this.fetchApiData.editUser(this.userData).subscribe((result) => {

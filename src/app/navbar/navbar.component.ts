@@ -11,6 +11,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
+  /**
+   * @param snackBar
+   * @param router
+   */
   constructor(public snackBar: MatSnackBar, public router: Router) {}
 
   ngOnInit(): void {}
